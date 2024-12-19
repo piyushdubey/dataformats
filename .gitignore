@@ -25,3 +25,6 @@ replay_pid*
 
 # Mac
 .DS_STORE
+
+# VSCode
+.vscode
