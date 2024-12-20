@@ -25,21 +25,65 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-      <groupId>org.apache.iceberg</groupId>
-      <artifactId>iceberg-core</artifactId>
-      <version>1.4.2</version>
-      </dependency>
-      <dependency>
+       <!-- Apache Iceberg core -->
+    <dependency>
         <groupId>org.apache.iceberg</groupId>
+        <artifactId>iceberg-core</artifactId>
+        <version>1.4.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.iceberg</groupId>
+        <artifactId>iceberg-common</artifactId>
+        <version>1.4.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.iceberg</groupId>
         <artifactId>iceberg-api</artifactId>
         <version>1.4.2</version>
-      </dependency>
-      <dependency>
+    </dependency>
+
+    <!-- Apache Iceberg Hadoop support -->
+    <dependency>
+        <groupId>org.apache.iceberg</groupId>
+        <artifactId>iceberg-hadoop</artifactId>
+        <version>1.4.2</version>
+    </dependency>
+
+    <!-- Apache Iceberg Parquet support -->
+    <dependency>
         <groupId>org.apache.iceberg</groupId>
         <artifactId>iceberg-parquet</artifactId>
         <version>1.4.2</version>
-      </dependency>
+    </dependency>
+
+    <!-- Hadoop Common (for Configuration) -->
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-common</artifactId>
+        <version>3.3.6</version>
+    </dependency>
+
+    <!-- Hadoop Client -->
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-client</artifactId>
+        <version>3.3.6</version>
+    </dependency>
+
+    <!-- Parquet libraries -->
+    <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-hadoop</artifactId>
+        <version>1.13.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.parquet</groupId>
+        <artifactId>parquet-column</artifactId>
+        <version>1.13.1</version>
+    </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -54,6 +98,11 @@
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectnessie.nessie-integrations</groupId>
+      <artifactId>nessie-gc-tool</artifactId>
+      <version>0.101.3</version>
     </dependency>
   </dependencies>
 

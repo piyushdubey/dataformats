@@ -1,0 +1,62 @@
+{
+  "format-version" : 2,
+  "table-uuid" : "ec28e187-fb41-43c2-bf4d-1bd97a591105",
+  "location" : "~/projects/example_db/customer_data",
+  "last-sequence-number" : 0,
+  "last-updated-ms" : 1734667634880,
+  "last-column-id" : 4,
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "id",
+      "required" : true,
+      "type" : "long"
+    }, {
+      "id" : 2,
+      "name" : "name",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "age",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 4,
+      "name" : "timestamp",
+      "required" : true,
+      "type" : "timestamp"
+    } ]
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ {
+      "name" : "timestamp_month",
+      "transform" : "month",
+      "source-id" : 4,
+      "field-id" : 1000
+    } ]
+  } ],
+  "last-partition-id" : 1000,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "write.format.default" : "parquet",
+    "write.delete.mode" : "merge-on-read",
+    "write.parquet.compression-codec" : "snappy"
+  },
+  "current-snapshot-id" : -1,
+  "refs" : { },
+  "snapshots" : [ ],
+  "statistics" : [ ],
+  "partition-statistics" : [ ],
+  "snapshot-log" : [ ],
+  "metadata-log" : [ ]
+}
