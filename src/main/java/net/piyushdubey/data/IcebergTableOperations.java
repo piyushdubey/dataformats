@@ -61,7 +61,6 @@ public class IcebergTableOperations {
             transaction.commitTransaction();
         }
 
-
         System.out.println("Inserted 20 records successfully");
 
         // Delete 11 records (IDs 1-11)
@@ -111,7 +110,6 @@ public class IcebergTableOperations {
                 .withFormat(FileFormat.PARQUET)
                 .build();
     }
-
 
     private static DataFile insertRecord(Table table, int id, FileIO io) throws Exception {
         // Create a unique file path for the data file
