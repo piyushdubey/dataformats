@@ -65,49 +65,11 @@ public class IcebergTableOperations {
         System.out.println("Inserted 20 records successfully");
 
         // Delete 11 records (IDs 1-11)
-        Transaction transaction = table.newTransaction();
-        deleteRecord(transaction, 1, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 2, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 3, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 4, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 5, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 6, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 7, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 8, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 9, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 10, table);
-        transaction.commitTransaction();
-
-        transaction = table.newTransaction();
-        deleteRecord(transaction, 11, table);
-        transaction.commitTransaction();
+        for (int id=1; id<=11; id++) {
+            Transaction transaction = table.newTransaction();
+            deleteRecord(transaction, id, table);
+            transaction.commitTransaction();
+        }
 
         System.out.println("Deleted 11 records successfully");
 
