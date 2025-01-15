@@ -37,9 +37,8 @@ public class IcebergTableOperations {
 
         // Create table properties
         Map<String, String> properties = new HashMap<>();
-        properties.put("format-version", "2");
+        properties.put("format-version", "3");
         properties.put("write.delete.mode", "merge-on-read");
-        properties.put("write.delete.vector.enabled", "true");
         properties.put("write.update.mode", "merge-on-read");
 
         // Initialize Hadoop Tables
