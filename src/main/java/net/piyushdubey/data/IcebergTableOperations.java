@@ -48,12 +48,13 @@ public class IcebergTableOperations {
         // Create table
         Table table = tables.create(schema, PartitionSpec.unpartitioned(), properties, TABLE_LOCATION);
 
+        Transaction transaction;
         // Insert 20 records
-        for (int i=1; i<=20; i++) {
+        for (int id=1; id<=20; id++) {
             // Create a transaction for inserting records
-            Transaction transaction = table.newTransaction();
+            transaction = table.newTransaction();
 
-            DataFile dataFile = insertRecord(transaction.table(), 1, table.io());
+            DataFile dataFile = insertRecord(transaction.table(), id, table.io());
 
             transaction.newAppend()
                     .appendFile(dataFile)
@@ -65,7 +66,7 @@ public class IcebergTableOperations {
 
         // Delete 11 records (IDs 1-11)
         for (int id=1; id<=11; id++) {
-            Transaction transaction = table.newTransaction();
+            transaction = table.newTransaction();
             deleteRecord(transaction, id, table);
             transaction.commitTransaction();
         }
